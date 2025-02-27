@@ -1,0 +1,169 @@
+PHP Web Development Fundamentals - Practice Tasks
+
+Task 1: Basic PHP Syntax
+
+Objective:
+
+Understand PHP syntax and embedding PHP in HTML.
+
+Instructions:
+
+Create a file named basic.php.
+
+Use PHP to display "Hello, World!" inside an HTML heading (<h1> tag).
+
+Define a variable $name with your name and print "Hello, [Your Name]!".
+
+Task 2: Handling Forms with GET and POST
+
+Objective:
+
+Learn how to process form data using $_GET and $_POST.
+
+Instructions:
+
+Create a file named form.php.
+
+Build an HTML form with fields for name and email, with a submit button.
+
+When submitted, display the entered name and email using $_POST.
+
+Ensure data is properly validated (name should not be empty, email should be a valid format).
+
+Task 3: Control Structures (If-Else, Loops)
+
+Objective:
+
+Understand conditional statements and loops.
+
+Instructions:
+
+Create a file named conditions.php.
+
+Define a variable $age. If $age is greater than or equal to 18, print "You are an adult", otherwise print "You are a minor".
+
+Create an array of numbers from 1 to 10 and use a foreach loop to display each number.
+
+Task 4: Arrays and Associative Arrays
+
+Objective:
+
+Learn how to work with arrays in PHP.
+
+Instructions:
+
+Create a file named arrays.php.
+
+Define an indexed array of five favorite colors and display them in an ordered list.
+
+Create an associative array with keys name, age, and city, and print each key-value pair.
+
+Task 5: Functions in PHP
+
+Objective:
+
+Understand how to define and use functions.
+
+Instructions:
+
+Create a file named functions.php.
+
+Write a function greetUser($name) that takes a name as a parameter and returns a greeting message.
+
+Call this function and display the returned message.
+
+Task 6: File Handling (Reading and Writing)
+
+Objective:
+
+Learn how to read from and write to files in PHP.
+
+Instructions:
+
+Create a file named file.php.
+
+Write a PHP script to create a new text file sample.txt and write "Hello, this is a test file!".
+
+Read the contents of the file and display them.
+
+Task 7: Session and Cookies
+
+Objective:
+
+Learn how to use PHP sessions and cookies.
+
+Instructions:
+
+Create a file named session.php.
+
+Start a PHP session and store a variable username.
+
+Retrieve and display the session value.
+
+Set a cookie named user that stores a username and expires in 1 hour.
+
+Retrieve and display the cookie value.
+
+Task 8: Database Connection with MySQL (Using PDO)
+
+Objective:
+
+Learn how to connect PHP to a MySQL database.
+
+Instructions:
+
+Create a file named database.php.
+
+Use PDO to connect to a MySQL database (Assume dbname=mydatabase, user=root, password='').
+
+Fetch all users from a users table and display them in an HTML table.
+
+<?php
+try {
+    $pdo = new PDO("mysql:host=localhost;dbname=mydatabase", "root", "");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $pdo->query("SELECT * FROM users");
+    while ($row = $stmt->fetch()) {
+        echo "<p>{$row['id']}: {$row['name']} - {$row['email']}</p>";
+    }
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>
+
+Task 9: Simple Contact Form with PHP Validation
+
+Objective:
+
+Implement form validation and error handling.
+
+Instructions:
+
+Create a file named contact.php.
+
+Build an HTML form with fields for name, email, and message.
+
+Validate that all fields are filled in and email format is correct.
+
+Display appropriate error messages.
+
+If valid, display a success message.
+
+Task 10: Simple Login System (Without Database)
+
+Objective:
+
+Learn how to create a basic authentication system.
+
+Instructions:
+
+Create a file named login.php.
+
+Create a simple login form with fields username and password.
+
+Define hardcoded credentials (e.g., username: admin, password: 12345).
+
+If correct, display "Login successful", otherwise display an error message.
+
+End of Practice Tasks. Happy Coding! 🚀
+
